@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portofolio pribadi - Nama Kamu. Menampilkan proyek, pengalaman, dan keahlian." />
-  <title>Portofolio - Nama Kamu</title>
+  <meta name="description" content="Portofolio pribadi - Stefany Go. Menampilkan proyek, pengalaman, dan keahlian." />
+  <title>Portofolio - Stefany Go</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -14,7 +14,7 @@
   <!-- ===== Navbar ===== -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="#beranda" class="brand">Nama<span>Kamu</span></a>
+      <a href="#beranda" class="brand">Stefany<span>Go</span></a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -25,8 +25,6 @@
         <a href="#tentang">Tentang Saya</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#pendidikan">Pendidikan</a>
-        <a href="#pengalaman">Pengalaman</a>
-        <a href="#blog">Blog</a>
         <a href="#kontak">Kontak</a>
         <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">🌙</button>
       </nav>
@@ -39,20 +37,18 @@
       <div class="hero-text">
         <p class="eyebrow">👋 Halo Semua, Saya</p>
         <h1>Stefany Go</h1>
-        <h2 class="hero-role">Web Developer &amp; Mahasiswa Sistem Informasi</h2>
+        <h2 class="hero-role">Undergraduate Student Computer Science at Binus University@Bandung</h2>
         <p class="hero-desc">
-          Portofolio ini menampilkan proyek, kontribusi, dan keahlian saya di bidang
-          pengembangan perangkat lunak. Saat ini saya sedang mencari kesempatan magang.
+          Terbuka untuk internship dalam bidang Backend atau yang bersangkutan dalam CLoud.
         </p>
         <div class="hero-actions">
           <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
           <a href="#portfolio" class="btn btn-ghost">Lihat Portfolio</a>
-          <a href="assets/cv.pdf" class="btn btn-ghost" download>Unduh CV</a>
         </div>
       </div>
       <div class="hero-photo">
         <div class="photo-frame">
-          <img src="assets/profile.jpg" alt="Foto Nama Kamu" onerror="this.src='https://placehold.co/400x400/6c63ff/ffffff?text=Foto+Kamu'" />
+          <img src="assets/Profile.png" alt="Foto Nama Kamu" onerror="this.src='https://placehold.co/400x400/6c63ff/ffffff?text=Foto+Kamu'" />
         </div>
       </div>
     </div>
@@ -70,28 +66,22 @@
         <div class="about-card">
           <h3>Profil Singkat</h3>
           <p>
-            Saya seorang mahasiswa/lulusan Sistem Informasi yang tertarik pada
-            pengembangan web full-stack. Saya senang merancang solusi yang efisien,
-            rapi, dan mudah digunakan. Ganti paragraf ini dengan deskripsi dirimu.
+            Sebagai mahasiswa Computer Science, saya memiliki ketertarikan besar pada bidang Back-End Development dan Data Engineering, 
+            khususnya dalam merancang sistem yang efisien dan mengelola data secara optimal. Saya terbiasa berpikir analitis dan sistematis dalam menyelesaikan masalah teknis, 
+            memiliki kemampuan komunikasi yang baik untuk berkolaborasi lintas tim (termasuk dengan front-end developer dan stakeholder non-teknis), 
+            serta selalu berusaha untuk terus belajar dan beradaptasi dengan perkembangan teknologi terbaru di industri
+
           </p>
         </div>
 
         <div class="about-card">
           <h3>Keahlian &amp; Tech Stack</h3>
           <ul class="skill-list">
-            <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Tailwind, Bootstrap</li>
-            <li><strong>Backend:</strong> PHP (Laravel, CodeIgniter), REST API</li>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Backend:</strong> PHP (Laravel), REST API</li>
             <li><strong>Database:</strong> MySQL / MariaDB</li>
-            <li><strong>Tools:</strong> Git, VS Code, Figma</li>
+            <li><strong>Tools:</strong> GitHub, VS Code, Figma</li>
           </ul>
-        </div>
-
-        <div class="about-card">
-          <h3>Yang Saya Kerjakan</h3>
-          <p>
-            Membangun aplikasi web dari perencanaan hingga implementasi: sistem
-            informasi internal, company profile, dashboard monitoring, dan lainnya.
-          </p>
         </div>
       </div>
     </div>
@@ -109,86 +99,77 @@
       <div class="filters" id="filters">
         <button class="filter-btn active" data-filter="all">Semua</button>
         <button class="filter-btn" data-filter="web">Web App</button>
-        <button class="filter-btn" data-filter="dashboard">Dashboard</button>
-        <button class="filter-btn" data-filter="kampus">Kampus</button>
+        <button class="filter-btn" data-filter="research">Research Paper</button>
       </div>
 
       <div class="project-grid" id="projectGrid">
         <!-- Project 1 -->
         <article class="project-card" data-category="web">
           <div class="project-thumb">
-            <img src="assets/project1.jpg" alt="Portal Klaim" onerror="this.src='https://placehold.co/600x360/6c63ff/ffffff?text=Project+1'" />
+            <img src="assets/project1.jpg" alt="Portal Klaim" onerror="this.src='https://tepgoo.github.io/Portofolio/'" />
           </div>
           <div class="project-body">
             <span class="project-badge">Web App</span>
-            <h3>Portal Klaim</h3>
-            <p>Sistem untuk mempermudah nasabah melihat progress klaim asuransi.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Detail →</a>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card" data-category="web">
-          <div class="project-thumb">
-            <img src="assets/project2.jpg" alt="Company Profile" onerror="this.src='https://placehold.co/600x360/00b894/ffffff?text=Project+2'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Web App</span>
-            <h3>Website Company Profile</h3>
-            <p>Website company profile perusahaan dengan desain modern dan responsif.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Detail →</a>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card" data-category="dashboard">
-          <div class="project-thumb">
-            <img src="assets/project3.jpg" alt="Dashboard Monitoring" onerror="this.src='https://placehold.co/600x360/e17055/ffffff?text=Project+3'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Dashboard</span>
-            <h3>Dashboard Monitoring Produksi</h3>
-            <p>Dashboard real-time untuk memantau produksi dan performa penjualan.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Detail →</a>
-          </div>
-        </article>
-
-        <!-- Project 4 -->
-        <article class="project-card" data-category="kampus">
-          <div class="project-thumb">
-            <img src="assets/project4.jpg" alt="Proyek Kampus" onerror="this.src='https://placehold.co/600x360/0984e3/ffffff?text=Project+4'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Kampus</span>
-            <h3>Visualisasi Data Iklim</h3>
-            <p>Website visualisasi data untuk mendukung penelitian dan skripsi.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Detail →</a>
-          </div>
-        </article>
-
-        <!-- Project 5 -->
-        <article class="project-card" data-category="web">
-          <div class="project-thumb">
-            <img src="assets/project5.jpg" alt="E-Learning" onerror="this.src='https://placehold.co/600x360/fdcb6e/2d3436?text=Project+5'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Web App</span>
-            <h3>Sistem E-Learning</h3>
-            <p>Platform pembelajaran daring dengan materi interaktif dan kuis.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Detail →</a>
-          </div>
-        </article>
-
-        <!-- Project 6 -->
-        <article class="project-card" data-category="kampus">
-          <div class="project-thumb">
-            <img src="assets/project6.jpg" alt="Portofolio" onerror="this.src='https://placehold.co/600x360/a29bfe/ffffff?text=Project+6'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Kampus</span>
             <h3>Website Portofolio Pribadi</h3>
-            <p>Koleksi proyek dan keahlian yang dikembangkan selama berkarir.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Detail →</a>
+            <p>Membuat Portofolio dengan mengembangkan web</p>
+            <a href="#" class="project-link" target="_blank" rel="noopener">Open→</a>
+          </div>
+        </article>
+
+        <!-- Paper 1 -->
+        <article class="project-card" data-category="research">
+          <div class="project-thumb">
+            <img src="assets/paper1.jpg" alt="Research Paper 1" onerror="this.src='https://placehold.co/600x360/0984e3/ffffff?text=Paper+1'" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Research Paper</span>
+            <h3>DIABETIC RETINOPATHY DETECTION FROM EYE FUNDUS IMAGES</h3>
+            <p>Penelitian ini mengembangkan model CNN sederhana untuk mengklasifikasikan lima tingkat keparahan Diabetic Retinopathy 
+              dari citra fundus retina menggunakan dataset Kaggle EyePACS, 
+              dengan hasil akurasi 75% yang menunjukkan potensi sebagai alat bantu skrining dini meski masih lemah pada kelas minoritas.</p>
+            <a href="assets/paper1.pdf" class="project-link" download>📄 Unduh Paper →</a>
+          </div>
+        </article>
+
+        <!-- Paper 2 -->
+        <article class="project-card" data-category="research">
+          <div class="project-thumb">
+            <img src="assets/paper2.jpg" alt="Research Paper 2" onerror="this.src='https://placehold.co/600x360/6c5ce7/ffffff?text=Paper+2'" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Research Paper</span>
+            <h3>Tomato Leaf Disease Classification Using RepViT and MobileNetV4 for Mobile Application</h3>
+            <p>Penelitian ini membandingkan performa RepViT dan MobileNetV4 untuk klasifikasi penyakit daun tomat yang diintegrasikan ke aplikasi Android, di mana RepViT unggul dalam akurasi (98,39%) sementara MobileNetV4 lebih efisien secara komputasi dan cocok untuk perangkat mobile.</p>
+            <a href="assets/paper2.pdf" class="project-link" download>📄 Unduh Paper →</a>
+          </div>
+        </article>
+
+        <!-- Paper 3 -->
+        <article class="project-card" data-category="research">
+          <div class="project-thumb">
+            <img src="assets/paper3.jpg" alt="Research Paper 3" onerror="this.src='https://placehold.co/600x360/00b894/ffffff?text=Paper+3'" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Research Paper</span>
+            <h3>Evaluation of Deep Learning Models for Tomato Leaf Disease Classification</h3>
+            <p>Penelitian ini mengevaluasi enam arsitektur deep learning (MobileNetV4, ResNet-18, RepViT, Inception-ResNetV2, YOLOv11, YOLOv26) untuk klasifikasi dan deteksi penyakit daun tomat, dengan Inception-ResNetV2 mencapai akurasi tertinggi (99,04%) sementara model lain menawarkan keunggulan pada efisiensi atau lokalisasi penyakit.</p>
+            <a href="assets/paper3.pdf" class="project-link" download>📄 Unduh Paper →</a>
+          </div>
+        </article>
+
+        <!-- Project 7 -->
+        <article class="project-card" data-category="web">
+          <div class="project-thumb">
+            <img src="assets/project7.jpg" alt="Aplikasi Laravel" onerror="this.src='https://github.com/tepgoo/Attendance-System/'" />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="project-badge">Web App</span>
+              <span class="project-status">Tidak di-deploy</span>
+            </div>
+            <h3>Aplikasi Web Laravel + Database</h3>
+            <p>Aplikasi web berbasis Laravel yang terhubung ke database MySQL untuk operasi CRUD. Dijalankan secara lokal.</p>
+            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Kode →</a>
           </div>
         </article>
       </div>
@@ -200,108 +181,30 @@
     <div class="container">
       <div class="section-head">
         <span class="section-tag">Pendidikan</span>
-        <h2 class="section-title">Riwayat Pendidikan &amp; Bootcamp</h2>
+        <h2 class="section-title">Riwayat Pendidikan</h2>
       </div>
 
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2020 - 2024</span>
-            <h3>S1 Sistem Informasi</h3>
-            <p class="timeline-org">Universitas Kamu</p>
-            <p>IPK X.XX. Fokus pada pengembangan web dan basis data.</p>
+            <span class="timeline-date">2024 - Present</span>
+            <h3>Major Computer Science</h3>
+            <p class="timeline-org"> Binus University@Bandung </p>
+            <p>IPK 3.33.</p>
           </div>
         </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2023</span>
-            <h3>Bootcamp Web Development</h3>
-            <p class="timeline-org">Nama Penyelenggara</p>
-            <p>Pelatihan intensif full-stack development.</p>
+            <span class="timeline-date">2021 - 2024</span>
+            <h3>SMA Santa Maria 1 Cirebon</h3>
+            <p class="timeline-org">Jurusan IPA</p>
+            <p>Selalu masuk dalam peringkat 10, Mengikuti lomba matematika, Mengikuti kegiatan OSIS selama 2 Periode, dan menjadi bendahara yearbook dan graduation</p>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2017 - 2020</span>
-            <h3>SMA / SMK Jurusan</h3>
-            <p class="timeline-org">Nama Sekolah</p>
-            <p>Deskripsi singkat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Pengalaman ===== -->
-  <section class="section section-alt" id="pengalaman">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Pengalaman</span>
-        <h2 class="section-title">Pengalaman Kerja, Freelance &amp; Magang</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2024 - Sekarang</span>
-            <h3>IT Programmer</h3>
-            <p class="timeline-org">Nama Perusahaan</p>
-            <p>Mengembangkan sistem informasi internal berbasis web.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2023</span>
-            <h3>Web Developer (Freelance)</h3>
-            <p class="timeline-org">Proyek Mandiri</p>
-            <p>Membuat website company profile dan aplikasi kecil untuk klien.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Blog ===== -->
-  <section class="section" id="blog">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Blog</span>
-        <h2 class="section-title">Tulisan Terbaru</h2>
-        <p class="section-sub">Beberapa tulisan yang saya buat.</p>
-      </div>
-
-      <div class="blog-grid">
-        <article class="blog-card">
-          <div class="blog-thumb">
-            <img src="assets/blog1.jpg" alt="Blog 1" onerror="this.src='https://placehold.co/600x340/6c63ff/ffffff?text=Blog+1'" />
-          </div>
-          <div class="blog-body">
-            <span class="blog-date">01 Jan 2025</span>
-            <h3>Judul Tulisan Pertama</h3>
-            <p>Ringkasan singkat isi tulisan. Ganti dengan artikelmu.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Baca →</a>
-          </div>
-        </article>
-
-        <article class="blog-card">
-          <div class="blog-thumb">
-            <img src="assets/blog2.jpg" alt="Blog 2" onerror="this.src='https://placehold.co/600x340/00b894/ffffff?text=Blog+2'" />
-          </div>
-          <div class="blog-body">
-            <span class="blog-date">15 Feb 2025</span>
-            <h3>Judul Tulisan Kedua</h3>
-            <p>Ringkasan singkat isi tulisan. Ganti dengan artikelmu.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Baca →</a>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -322,35 +225,35 @@
           <span class="contact-icon">✉️</span>
           <div>
             <strong>Email</strong>
-            <p>emailkamu@gmail.com</p>
+            <p>stefanygo239323@gmail.com</p>
           </div>
         </a>
-        <a class="contact-card" href="tel:+6281234567890">
+        <a class="contact-card" href="tel:+6289506277666">
           <span class="contact-icon">📞</span>
           <div>
             <strong>Telepon</strong>
-            <p>+62 812-3456-7890</p>
+            <p>+62 895-0627-7666</p>
           </div>
         </a>
-        <a class="contact-card" href="https://linkedin.com/in/usernamekamu" target="_blank" rel="noopener">
+        <a class="contact-card" href="https://linkedin.com/in/stefany-go" target="_blank" rel="noopener">
           <span class="contact-icon">💼</span>
           <div>
             <strong>LinkedIn</strong>
-            <p>linkedin.com/in/usernamekamu</p>
+            <p>linkedin.com/in/stefany-go</p>
           </div>
         </a>
-        <a class="contact-card" href="https://github.com/usernamekamu" target="_blank" rel="noopener">
+        <a class="contact-card" href="https://github.com/tepgoo" target="_blank" rel="noopener">
           <span class="contact-icon">🐙</span>
           <div>
             <strong>GitHub</strong>
-            <p>github.com/usernamekamu</p>
+            <p>github.com/tepgoo</p>
           </div>
         </a>
-        <a class="contact-card" href="https://instagram.com/usernamekamu" target="_blank" rel="noopener">
+        <a class="contact-card" href="https://instagram.com/tepanii_go" target="_blank" rel="noopener">
           <span class="contact-icon">📸</span>
           <div>
             <strong>Instagram</strong>
-            <p>@usernamekamu</p>
+            <p>@tepanii_go</p>
           </div>
         </a>
       </div>
@@ -360,7 +263,7 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> Nama Kamu. Dibuat dengan ❤️ untuk portofolio.</p>
+      <p>&copy; <span id="year"></span> Stefany Go.</p>
     </div>
   </footer>
 

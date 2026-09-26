@@ -68,7 +68,7 @@ filterButtons.forEach((btn) => {
 
 // ===== Reveal on scroll =====
 const revealTargets = document.querySelectorAll(
-  ".about-card, .project-card, .timeline-item, .blog-card, .contact-card, .section-head"
+  ".about-card, .project-card, .timeline-item, .contact-card, .section-head"
 );
 revealTargets.forEach((el) => el.classList.add("reveal"));
 

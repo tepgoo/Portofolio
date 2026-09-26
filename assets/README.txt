@@ -1,10 +1,11 @@
-Taruh file gambar & CV kamu di folder ini.
+Taruh file gambar & PDF di folder ini.
 
 File yang dipakai oleh website (nama harus sama persis):
-- profile.jpg   -> foto profil di hero (disarankan 400x400 px, kotak)
-- project1.jpg s/d project6.jpg  -> thumbnail proyek (disarankan 600x360 px)
-- blog1.jpg, blog2.jpg           -> thumbnail blog (disarankan 600x340 px)
-- cv.pdf                          -> file CV untuk tombol "Unduh CV"
+- Profile.png    -> foto profil di hero (disarankan 400x400 px, kotak)
+- project1.jpg   -> thumbnail proyek Website Portofolio (600x360 px)
+- project7.jpg   -> thumbnail proyek Aplikasi Laravel (600x360 px)
+- paper1.jpg s/d paper3.jpg  -> thumbnail paper penelitian (600x360 px)
+- paper1.pdf s/d paper3.pdf  -> file PDF untuk tombol "Unduh Paper"
 
 Kalau file gambar belum ada, website otomatis menampilkan placeholder,
-jadi tampilan tetap rapi sebelum kamu upload gambar asli.
+jadi tampilan tetap rapi sebelum gambar asli diunggah.
