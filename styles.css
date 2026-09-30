@@ -362,6 +362,7 @@ ul { list-style: none; }
 .tok-mint  { color: var(--mint); }
 .tok-peach { color: var(--peach); }
 .tok-sky   { color: var(--sky); }
+.tok-amber { color: var(--amber); }
 
 /* ===== ABOUT ===== */
 .card-wide { margin-bottom: 18px; }
