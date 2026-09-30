@@ -416,6 +416,8 @@ ul { list-style: none; }
   transition: letter-spacing 0.2s, opacity 0.2s;
 }
 .link:hover { opacity: 0.75; letter-spacing: 0.02em; }
+.link-row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; }
+.link-row .link { margin-top: 0; }
 
 /* ===== EDUCATION (log) ===== */
 .log { border-left: 2px solid var(--line); margin-left: 6px; }
