@@ -1,112 +1,115 @@
-// ===== Tahun otomatis di footer =====
+// ===== Tahun otomatis =====
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ===== Toggle menu mobile =====
-const navToggle = document.getElementById("navToggle");
-const navLinks = document.getElementById("navLinks");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-navToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  navToggle.classList.toggle("open", open);
-  navToggle.setAttribute("aria-expanded", String(open));
-});
+// ===== Efek ketik di hero =====
+const typedEl = document.getElementById("typed");
+const phrases = [
+  "cd ~/backend && npm run dev",
+  "git commit -m \"belajar hal baru\"",
+  "deploy --target cloud",
+  "SELECT * FROM opportunities;",
+];
+if (typedEl) {
+  if (reduceMotion) {
+    typedEl.textContent = phrases[0];
+  } else {
+    let p = 0, c = 0, deleting = false;
+    (function tick() {
+      const full = phrases[p];
+      c += deleting ? -1 : 1;
+      typedEl.textContent = full.slice(0, c);
+      let delay = deleting ? 45 : 80;
+      if (!deleting && c === full.length) { delay = 1600; deleting = true; }
+      else if (deleting && c === 0) { deleting = false; p = (p + 1) % phrases.length; delay = 400; }
+      setTimeout(tick, delay);
+    })();
+  }
+}
 
-// Tutup menu saat link diklik (mode mobile)
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    navToggle.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
-  });
-});
+// ===== Toggle sidebar (mobile) =====
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+if (menuBtn && sidebar) {
+  menuBtn.addEventListener("click", () => sidebar.classList.toggle("open"));
+  sidebar.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => sidebar.classList.remove("open"))
+  );
+}
 
-// ===== Navbar shadow saat scroll =====
-const navbar = document.getElementById("navbar");
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  const y = window.scrollY;
-  navbar.classList.toggle("scrolled", y > 8);
-  backToTop.classList.toggle("show", y > 400);
-});
-
-// ===== Highlight link nav aktif berdasarkan section =====
-const sections = document.querySelectorAll("section[id]");
-const navAnchors = navLinks.querySelectorAll("a");
-
-const spy = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-        navAnchors.forEach((a) => {
-          a.classList.toggle("active", a.getAttribute("href") === "#" + id);
-        });
-      }
-    });
-  },
-  { rootMargin: "-45% 0px -50% 0px" }
-);
-sections.forEach((s) => spy.observe(s));
-
-// ===== Filter portfolio =====
-const filterButtons = document.querySelectorAll(".filter-btn");
-const projectCards = document.querySelectorAll(".project-card");
-
-filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filterButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const filter = btn.dataset.filter;
-    projectCards.forEach((card) => {
-      const match = filter === "all" || card.dataset.category === filter;
-      card.classList.toggle("hide", !match);
-    });
-  });
-});
-
-// ===== Reveal on scroll =====
-const revealTargets = document.querySelectorAll(
-  ".about-card, .project-card, .timeline-item, .contact-card, .section-head"
-);
-revealTargets.forEach((el) => el.classList.add("reveal"));
-
-const revealObserver = new IntersectionObserver(
-  (entries, obs) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        obs.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
-revealTargets.forEach((el) => revealObserver.observe(el));
-
-// ===== Dark / Light mode =====
+// ===== Theme toggle =====
 const themeToggle = document.getElementById("themeToggle");
 const root = document.documentElement;
-
-// Pakai preferensi tersimpan atau ikuti sistem
 const saved = localStorage.getItem("theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-const initial = saved || (prefersDark ? "dark" : "light");
-applyTheme(initial);
+applyTheme(saved || (prefersDark ? "dark" : "light"));
 
 themeToggle.addEventListener("click", () => {
   const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
   applyTheme(next);
   localStorage.setItem("theme", next);
 });
-
 function applyTheme(theme) {
-  if (theme === "dark") {
-    root.setAttribute("data-theme", "dark");
-    themeToggle.textContent = "☀️";
-  } else {
-    root.removeAttribute("data-theme");
-    themeToggle.textContent = "🌙";
-  }
+  if (theme === "dark") { root.setAttribute("data-theme", "dark"); themeToggle.textContent = "◑"; }
+  else { root.removeAttribute("data-theme"); themeToggle.textContent = "◐"; }
 }
+
+// ===== Filter proyek =====
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".proj");
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const f = btn.dataset.filter;
+    projectCards.forEach((card) => {
+      card.classList.toggle("hide", !(f === "all" || card.dataset.category === f));
+    });
+  });
+});
+
+// ===== Sinkron tab + file explorer + status bar dengan scroll =====
+const editor = document.getElementById("editor");
+const panes = document.querySelectorAll(".pane");
+const tabs = document.querySelectorAll(".tab");
+const files = document.querySelectorAll(".sidebar .file");
+const sbSection = document.getElementById("sbSection");
+
+function labelFor(id) {
+  const map = { home: "home.js", about: "about.md", projects: "projects/", edu: "education.log", certs: "certs.json", contact: "contact.sh" };
+  return map[id] || id;
+}
+function setActive(id) {
+  tabs.forEach((t) => t.classList.toggle("active", t.getAttribute("href") === "#" + id));
+  files.forEach((f) => f.classList.toggle("active", f.getAttribute("href") === "#" + id));
+  if (sbSection) sbSection.textContent = labelFor(id);
+}
+
+const spy = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
+  },
+  { root: editor, rootMargin: "-40% 0px -55% 0px" }
+);
+panes.forEach((p) => spy.observe(p));
+
+// ===== Reveal saat scroll (di dalam editor) =====
+const revealTargets = document.querySelectorAll(".card, .log-row, .code-block, .term");
+revealTargets.forEach((el) => el.classList.add("reveal"));
+const revealObs = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
+  },
+  { root: editor, threshold: 0.15 }
+);
+revealTargets.forEach((el) => revealObs.observe(el));
+
+// ===== Spotlight mengikuti kursor pada kartu =====
+document.querySelectorAll(".card").forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+    card.style.setProperty("--my", `${e.clientY - r.top}px`);
+  });
+});

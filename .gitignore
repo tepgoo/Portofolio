@@ -3,3 +3,6 @@
 
 # Office temp/lock files
 ~$*
+# Folder lain yang tidak ikut di-deploy
+Shieren-Portofolio/
+portfolio-template/

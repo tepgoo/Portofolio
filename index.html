@@ -3,271 +3,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portofolio pribadi - Stefany Go. Menampilkan proyek, pengalaman, dan keahlian." />
-  <title>Portofolio - Stefany Go</title>
+  <meta name="description" content="Portofolio Stefany Go - Computer Science student, backend & cloud enthusiast." />
+  <title>stefany.go // portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ===== Navbar ===== -->
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#beranda" class="brand">Stefany<span>Go</span></a>
+  <div class="scanline"></div>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- ===== IDE Window ===== -->
+  <div class="ide">
+    <!-- Title bar -->
+    <header class="titlebar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="tabbar" id="tabbar">
+        <a href="#home" class="tab active">home.js</a>
+        <a href="#about" class="tab">about.md</a>
+        <a href="#projects" class="tab">projects/</a>
+        <a href="#edu" class="tab">education.log</a>
+        <a href="#certs" class="tab">certs.json</a>
+        <a href="#contact" class="tab">contact.sh</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Ganti tema" aria-label="Ganti tema">◐</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">≡</button>
+    </header>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#beranda" class="active">Beranda</a>
-        <a href="#tentang">Tentang Saya</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#pendidikan">Pendidikan</a>
-        <a href="#kontak">Kontak</a>
-        <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema" title="Ganti tema">🌙</button>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ===== Hero / Beranda ===== -->
-  <section class="hero" id="beranda">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <p class="eyebrow">👋 Halo Semua, Saya</p>
-        <h1>Stefany Go</h1>
-        <h2 class="hero-role">Undergraduate Student Computer Science at Binus University@Bandung</h2>
-        <p class="hero-desc">
-          Terbuka untuk internship dalam bidang Backend atau yang bersangkutan dalam CLoud.
-        </p>
-        <div class="hero-actions">
-          <a href="#kontak" class="btn btn-primary">Hubungi Saya</a>
-          <a href="#portfolio" class="btn btn-ghost">Lihat Portfolio</a>
+    <div class="workspace">
+      <!-- Sidebar / file explorer -->
+      <aside class="sidebar" id="sidebar">
+        <p class="side-title">EXPLORER</p>
+        <ul class="tree">
+          <li class="folder open">portfolio</li>
+          <li><a href="#home" class="file js">home.js</a></li>
+          <li><a href="#about" class="file md">about.md</a></li>
+          <li><a href="#projects" class="file dir">projects/</a></li>
+          <li><a href="#edu" class="file log">education.log</a></li>
+          <li><a href="#certs" class="file json">certs.json</a></li>
+          <li><a href="#contact" class="file sh">contact.sh</a></li>
+        </ul>
+        <div class="side-status">
+          <span class="dot-live"></span> available for internship
         </div>
-      </div>
-      <div class="hero-photo">
-        <div class="photo-frame">
-          <img src="assets/Profile.png" alt="Foto Nama Kamu" onerror="this.src='https://placehold.co/400x400/6c63ff/ffffff?text=Foto+Kamu'" />
-        </div>
-      </div>
-    </div>
-  </section>
+      </aside>
 
-  <!-- ===== Tentang Saya ===== -->
-  <section class="section" id="tentang">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Tentang Saya</span>
-        <h2 class="section-title">Kenalan Yuk</h2>
-      </div>
+      <!-- Editor pane -->
+      <main class="editor" id="editor">
 
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Profil Singkat</h3>
-          <p>
-            Sebagai mahasiswa Computer Science, saya memiliki ketertarikan besar pada bidang Back-End Development dan Data Engineering, 
-            khususnya dalam merancang sistem yang efisien dan mengelola data secara optimal. Saya terbiasa berpikir analitis dan sistematis dalam menyelesaikan masalah teknis, 
-            memiliki kemampuan komunikasi yang baik untuk berkolaborasi lintas tim (termasuk dengan front-end developer dan stakeholder non-teknis), 
-            serta selalu berusaha untuk terus belajar dan beradaptasi dengan perkembangan teknologi terbaru di industri
+        <!-- ===== HOME ===== -->
+        <section class="pane" id="home">
+          <div class="hero-inner">
+            <div class="hero-left">
+              <div class="code-block">
+                <span class="ln">1</span><span class="cmt">// welcome</span>
+                <span class="ln">2</span><span><span class="kw">const</span> <span class="var">dev</span> = {</span>
+                <span class="ln">3</span><span class="indent"><span class="prop">name</span>: <span class="str">"Stefany Go"</span>,</span>
+                <span class="ln">4</span><span class="indent"><span class="prop">role</span>: <span class="str">"CS Undergraduate @ Binus Bandung"</span>,</span>
+                <span class="ln">5</span><span class="indent"><span class="prop">focus</span>: [<span class="str">"Backend"</span>, <span class="str">"Cloud"</span>, <span class="str">"Data"</span>],</span>
+                <span class="ln">6</span><span>};</span>
+              </div>
 
-          </p>
-        </div>
-
-        <div class="about-card">
-          <h3>Keahlian &amp; Tech Stack</h3>
-          <ul class="skill-list">
-            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-            <li><strong>Backend:</strong> PHP (Laravel), REST API</li>
-            <li><strong>Database:</strong> MySQL / MariaDB</li>
-            <li><strong>Tools:</strong> GitHub, VS Code, Figma</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Portfolio ===== -->
-  <section class="section section-alt" id="portfolio">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Proyek Saya</h2>
-        <p class="section-sub">Berikut beberapa proyek yang pernah saya kembangkan.</p>
-      </div>
-
-      <div class="filters" id="filters">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="web">Web App</button>
-        <button class="filter-btn" data-filter="research">Research Paper</button>
-      </div>
-
-      <div class="project-grid" id="projectGrid">
-        <!-- Project 1 -->
-        <article class="project-card" data-category="web">
-          <div class="project-thumb">
-            <img src="assets/project1.jpg" alt="Portal Klaim" onerror="this.src='https://tepgoo.github.io/Portofolio/'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Web App</span>
-            <h3>Website Portofolio Pribadi</h3>
-            <p>Membuat Portofolio dengan mengembangkan web</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Open→</a>
-          </div>
-        </article>
-
-        <!-- Paper 1 -->
-        <article class="project-card" data-category="research">
-          <div class="project-thumb">
-            <img src="assets/paper1.jpg" alt="Research Paper 1" onerror="this.src='https://placehold.co/600x360/0984e3/ffffff?text=Paper+1'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Research Paper</span>
-            <h3>DIABETIC RETINOPATHY DETECTION FROM EYE FUNDUS IMAGES</h3>
-            <p>Penelitian ini mengembangkan model CNN sederhana untuk mengklasifikasikan lima tingkat keparahan Diabetic Retinopathy 
-              dari citra fundus retina menggunakan dataset Kaggle EyePACS, 
-              dengan hasil akurasi 75% yang menunjukkan potensi sebagai alat bantu skrining dini meski masih lemah pada kelas minoritas.</p>
-            <a href="assets/paper1.pdf" class="project-link" download>📄 Unduh Paper →</a>
-          </div>
-        </article>
-
-        <!-- Paper 2 -->
-        <article class="project-card" data-category="research">
-          <div class="project-thumb">
-            <img src="assets/paper2.jpg" alt="Research Paper 2" onerror="this.src='https://placehold.co/600x360/6c5ce7/ffffff?text=Paper+2'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Research Paper</span>
-            <h3>Tomato Leaf Disease Classification Using RepViT and MobileNetV4 for Mobile Application</h3>
-            <p>Penelitian ini membandingkan performa RepViT dan MobileNetV4 untuk klasifikasi penyakit daun tomat yang diintegrasikan ke aplikasi Android, di mana RepViT unggul dalam akurasi (98,39%) sementara MobileNetV4 lebih efisien secara komputasi dan cocok untuk perangkat mobile.</p>
-            <a href="assets/paper2.pdf" class="project-link" download>📄 Unduh Paper →</a>
-          </div>
-        </article>
-
-        <!-- Paper 3 -->
-        <article class="project-card" data-category="research">
-          <div class="project-thumb">
-            <img src="assets/paper3.jpg" alt="Research Paper 3" onerror="this.src='https://placehold.co/600x360/00b894/ffffff?text=Paper+3'" />
-          </div>
-          <div class="project-body">
-            <span class="project-badge">Research Paper</span>
-            <h3>Evaluation of Deep Learning Models for Tomato Leaf Disease Classification</h3>
-            <p>Penelitian ini mengevaluasi enam arsitektur deep learning (MobileNetV4, ResNet-18, RepViT, Inception-ResNetV2, YOLOv11, YOLOv26) untuk klasifikasi dan deteksi penyakit daun tomat, dengan Inception-ResNetV2 mencapai akurasi tertinggi (99,04%) sementara model lain menawarkan keunggulan pada efisiensi atau lokalisasi penyakit.</p>
-            <a href="assets/paper3.pdf" class="project-link" download>📄 Unduh Paper →</a>
-          </div>
-        </article>
-
-        <!-- Project 7 -->
-        <article class="project-card" data-category="web">
-          <div class="project-thumb">
-            <img src="assets/project7.jpg" alt="Aplikasi Laravel" onerror="this.src='https://github.com/tepgoo/Attendance-System/'" />
-          </div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="project-badge">Web App</span>
-              <span class="project-status">Tidak di-deploy</span>
+              <h1 class="hero-name">Stefany&nbsp;Go</h1>
+              <p class="hero-typed"><span class="prompt">$</span> <span id="typed"></span><span class="caret">▊</span></p>
+              <p class="hero-desc">
+                Terbuka untuk internship di bidang <span class="hl">Backend</span> dan <span class="hl hl2">Cloud</span>.
+                Suka merancang sistem yang efisien dan mengelola data secara optimal.
+              </p>
+              <div class="actions">
+                <a href="#contact" class="btn btn-primary">→ contact()</a>
+                <a href="#projects" class="btn">view projects</a>
+                <a href="assets/cv.pdf" class="btn" download>↓ download_cv.pdf</a>
+              </div>
             </div>
-            <h3>Aplikasi Web Laravel + Database</h3>
-            <p>Aplikasi web berbasis Laravel yang terhubung ke database MySQL untuk operasi CRUD. Dijalankan secara lokal.</p>
-            <a href="#" class="project-link" target="_blank" rel="noopener">Lihat Kode →</a>
+
+            <div class="hero-right">
+              <figure class="photo-window" id="photoWindow">
+                <div class="pw-bar">
+                  <span class="pw-dots"><i></i><i></i><i></i></span>
+                  <span class="pw-name">profile.png</span>
+                </div>
+                <img src="assets/Profile.png" alt="Foto Stefany Go" onerror="this.src='https://placehold.co/440x520/a99be0/ffffff?text=Stefany+Go'" />
+              </figure>
+            </div>
           </div>
-        </article>
-      </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section class="pane" id="about">
+          <p class="pane-label"><span class="cmt">// about.md</span></p>
+          <h2 class="pane-title"># Tentang Saya</h2>
+          <div class="about-wrap">
+            <div class="card">
+              <p class="card-key"><span class="tok tok-lav">profil</span></p>
+              <p>Mahasiswa Computer Science dengan minat kuat pada Back-End Development dan Data Engineering. Terbiasa berpikir analitis dan sistematis, mampu berkolaborasi lintas tim, dan terus belajar mengikuti perkembangan teknologi.</p>
+            </div>
+            <div class="card">
+              <p class="card-key"><span class="tok tok-mint">tech_stack[]</span></p>
+              <ul class="chips">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                <li>PHP</li><li>Laravel</li><li>REST API</li>
+                <li>MySQL</li><li>MariaDB</li>
+                <li>Git</li><li>VS Code</li><li>Figma</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section class="pane" id="projects">
+          <p class="pane-label"><span class="cmt">// projects/</span></p>
+          <h2 class="pane-title"># Proyek &amp; Riset</h2>
+
+          <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all">all</button>
+            <button class="filter-btn" data-filter="web">web</button>
+            <button class="filter-btn" data-filter="research">research</button>
+          </div>
+
+          <div class="proj-grid" id="projectGrid">
+            <article class="card proj" data-category="web">
+              <div class="proj-top"><span class="tok tok-sky">web</span><span class="proj-file">portfolio.web</span></div>
+              <h3>Website Portofolio Pribadi</h3>
+              <p>Membangun website portofolio ini dari nol dengan HTML, CSS, dan JavaScript.</p>
+              <a href="#" class="link" target="_blank" rel="noopener">open →</a>
+            </article>
+
+            <article class="card proj" data-category="research">
+              <div class="proj-top"><span class="tok tok-peach">research</span><span class="proj-file">paper_01.pdf</span></div>
+              <h3>Diabetic Retinopathy Detection from Eye Fundus Images</h3>
+              <p>Model CNN untuk mengklasifikasikan lima tingkat keparahan Diabetic Retinopathy dari citra fundus (dataset Kaggle EyePACS), akurasi 75%.</p>
+              <a href="assets/paper1.pdf" class="link" download>download →</a>
+            </article>
+
+            <article class="card proj" data-category="research">
+              <div class="proj-top"><span class="tok tok-peach">research</span><span class="proj-file">paper_02.pdf</span></div>
+              <h3>Tomato Leaf Disease Classification (RepViT &amp; MobileNetV4)</h3>
+              <p>Membandingkan RepViT dan MobileNetV4 untuk klasifikasi penyakit daun tomat pada aplikasi Android. RepViT unggul akurasi (98,39%).</p>
+              <a href="assets/paper2.pdf" class="link" download>download →</a>
+            </article>
+
+            <article class="card proj" data-category="research">
+              <div class="proj-top"><span class="tok tok-peach">research</span><span class="proj-file">paper_03.pdf</span></div>
+              <h3>Evaluation of Deep Learning Models for Tomato Leaf Disease</h3>
+              <p>Evaluasi enam arsitektur deep learning untuk klasifikasi &amp; deteksi penyakit daun tomat. Inception-ResNetV2 tertinggi (99,04%).</p>
+              <a href="assets/paper3.pdf" class="link" download>download →</a>
+            </article>
+
+            <article class="card proj" data-category="web">
+              <div class="proj-top"><span class="tok tok-sky">web</span><span class="proj-badge-off">local only</span></div>
+              <h3>Aplikasi Web Laravel + Database</h3>
+              <p>Aplikasi web berbasis Laravel terhubung ke MySQL untuk operasi CRUD. Dijalankan secara lokal.</p>
+              <a href="https://github.com/tepgoo/Attendance-System/" class="link" target="_blank" rel="noopener">source →</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section class="pane" id="edu">
+          <p class="pane-label"><span class="cmt">// education.log</span></p>
+          <h2 class="pane-title"># Riwayat Pendidikan</h2>
+          <div class="log">
+            <div class="log-row">
+              <span class="log-date">2024 — present</span>
+              <div class="log-body">
+                <h3>B.Sc. Computer Science</h3>
+                <p class="log-org">Binus University @ Bandung</p>
+                <p>IPK 3.33.</p>
+              </div>
+            </div>
+            <div class="log-row">
+              <span class="log-date">2021 — 2024</span>
+              <div class="log-body">
+                <h3>SMA Santa Maria 1 Cirebon</h3>
+                <p class="log-org">Jurusan IPA</p>
+                <p>Konsisten peringkat 10 besar, lomba matematika, pengurus OSIS 2 periode, bendahara yearbook &amp; graduation.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== CERTS ===== -->
+        <section class="pane" id="certs">
+          <p class="pane-label"><span class="cmt">// certs.json</span></p>
+          <h2 class="pane-title"># Sertifikat</h2>
+          <div class="cert-grid">
+            <article class="card cert">
+              <span class="tok tok-sky">Google Cloud</span>
+              <h3>Google Cloud Computing Foundations Certificate</h3>
+              <a href="https://www.credly.com/badges/99b7b32b-6f18-4737-b4e6-4989d2860c2c/public_url" class="link" target="_blank" rel="noopener">verify credential →</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section class="pane" id="contact">
+          <p class="pane-label"><span class="cmt">// contact.sh</span></p>
+          <h2 class="pane-title"># Mari Terkoneksi</h2>
+          <div class="term">
+            <a class="term-line" href="mailto:stefanygo239323@gmail.com">
+              <span class="prompt">$</span> mail <span class="str">stefanygo239323@gmail.com</span>
+            </a>
+            <a class="term-line" href="tel:+6289506277666">
+              <span class="prompt">$</span> call <span class="str">+62 895-0627-7666</span>
+            </a>
+            <a class="term-line" href="https://linkedin.com/in/stefany-go" target="_blank" rel="noopener">
+              <span class="prompt">$</span> open <span class="str">linkedin.com/in/stefany-go</span>
+            </a>
+            <a class="term-line" href="https://github.com/tepgoo" target="_blank" rel="noopener">
+              <span class="prompt">$</span> open <span class="str">github.com/tepgoo</span>
+            </a>
+            <a class="term-line" href="https://instagram.com/tepanii_go" target="_blank" rel="noopener">
+              <span class="prompt">$</span> open <span class="str">instagram.com/@tepanii_go</span>
+            </a>
+          </div>
+        </section>
+
+        <footer class="foot">
+          <span class="cmt">// © <span id="year"></span> Stefany Go</span>
+        </footer>
+      </main>
     </div>
-  </section>
 
-  <!-- ===== Pendidikan ===== -->
-  <section class="section" id="pendidikan">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Pendidikan</span>
-        <h2 class="section-title">Riwayat Pendidikan</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2024 - Present</span>
-            <h3>Major Computer Science</h3>
-            <p class="timeline-org"> Binus University@Bandung </p>
-            <p>IPK 3.33.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-date">2021 - 2024</span>
-            <h3>SMA Santa Maria 1 Cirebon</h3>
-            <p class="timeline-org">Jurusan IPA</p>
-            <p>Selalu masuk dalam peringkat 10, Mengikuti lomba matematika, Mengikuti kegiatan OSIS selama 2 Periode, dan menjadi bendahara yearbook dan graduation</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Kontak ===== -->
-  <section class="section section-alt" id="kontak">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Kontak</span>
-        <h2 class="section-title">Mari Terkoneksi</h2>
-        <p class="section-sub">
-          Saya terbuka untuk kolaborasi, diskusi proyek, atau peluang magang.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <a class="contact-card" href="mailto:emailkamu@gmail.com">
-          <span class="contact-icon">✉️</span>
-          <div>
-            <strong>Email</strong>
-            <p>stefanygo239323@gmail.com</p>
-          </div>
-        </a>
-        <a class="contact-card" href="tel:+6289506277666">
-          <span class="contact-icon">📞</span>
-          <div>
-            <strong>Telepon</strong>
-            <p>+62 895-0627-7666</p>
-          </div>
-        </a>
-        <a class="contact-card" href="https://linkedin.com/in/stefany-go" target="_blank" rel="noopener">
-          <span class="contact-icon">💼</span>
-          <div>
-            <strong>LinkedIn</strong>
-            <p>linkedin.com/in/stefany-go</p>
-          </div>
-        </a>
-        <a class="contact-card" href="https://github.com/tepgoo" target="_blank" rel="noopener">
-          <span class="contact-icon">🐙</span>
-          <div>
-            <strong>GitHub</strong>
-            <p>github.com/tepgoo</p>
-          </div>
-        </a>
-        <a class="contact-card" href="https://instagram.com/tepanii_go" target="_blank" rel="noopener">
-          <span class="contact-icon">📸</span>
-          <div>
-            <strong>Instagram</strong>
-            <p>@tepanii_go</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Footer ===== -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Stefany Go.</p>
-    </div>
-  </footer>
-
-  <a href="#beranda" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</a>
+    <!-- Status bar -->
+    <footer class="statusbar">
+      <span class="sb-left"><span class="dot-live"></span> main</span>
+      <span class="sb-right" id="sbSection">home.js</span>
+      <span class="sb-right">UTF-8</span>
+      <span class="sb-right">JavaScript</span>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
